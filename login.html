@@ -1,0 +1,97 @@
+<style>
+body  {
+  background-color: #D3D3D3;
+  font-family: "Arial", sans-serif;
+  margin: 0px;
+}
+header {
+  margin: 0px;
+  background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+  background-color: #6b6b6b;
+  color: #FFFFFF;
+  font-size: 100%;
+  line-height: 300px;
+  font-weight: normal;
+  text-align: right;
+}
+ul {
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+}
+li {
+  /*float: center;*/
+  display: inline-block;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+li a:hover {background-color: #111;}
+* { margin:0; padding:0; box-sizing:border-box; }
+footer {
+  background-color: #c0c0c0;
+  font-size: 60%;
+  position:relative;
+  left: 0;
+  bottom: 0;
+  height: 350px;
+  width: 100%;
+  overflow:hidden;
+}
+
+#login {
+  float: left;
+  width: 175px;
+  height: 130px;
+  border: 1px;
+  border-color: #ffffff;
+}
+
+</style>
+
+<header>
+<p><a href="login.html">login</a>&nbsp;&nbsp;&nbsp;<a href="register.html">registrati</a></p>
+</header>
+<html>
+<head><title>Login</title></head>
+<body>
+  <ul>
+      <li><a class="active" href="Home.html">Home</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <br><br>
+  <script type='text/javascript'>
+  function checkForm(){
+    //controlliamo che username e password non siano uguali
+    if(document.login_form.username.value == '' ||
+      document.login_form.password.value == ''){
+        alert('Inserire username e/o password');
+        return false;
+      }
+      //se arriviamo qui vuol dire che è tutto a posto
+      return true;
+  }
+  </script>
+  <div id="login" style="margin-left:15%;padding:1px 16px;height:300px;">
+    <h3>Login</h3>
+    <form name='login_form' action='login.php' method='post' onsubmit='return checkForm();'>
+    Username <br><input type='text' name='username'><br>
+    Password <br><input type='password' name='password'><br>
+    <input type='submit'>
+  </form>
+  </div>
+  <br><br><br><br><br>
+</body>
+<footer>
+</footer>
+</html>
